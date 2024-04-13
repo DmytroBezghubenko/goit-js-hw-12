@@ -68,9 +68,11 @@ btnLoadMore.addEventListener("click", loadMore);
 
 function loadMore() {
     currentPage++;
+    let numberOnSite = document.querySelectorAll(".imageItme");
+    
     fetchImages(inputValue, currentPage)
         .then(data => {
-            if (data.total === 0 || data.totalHits <= currentPage * 15) {
+            if (data.total === 0 || data.totalHits === numberOnSite.length) {
                 btnLoadMore.style.display = 'none';
                 iziToast.warning({
                     position: 'topRight',
@@ -85,6 +87,10 @@ function loadMore() {
                     behavior: 'smooth'
                 });
             }
+                numberOnSite = document.querySelectorAll(".imageItme");
+                if (data.totalHits == numberOnSite.length) {
+                    btnLoadMore.style.display = 'none';
+                }
         })
         .catch(error => alert(error))
         .finally(() => {

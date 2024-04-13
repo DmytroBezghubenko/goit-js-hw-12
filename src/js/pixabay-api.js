@@ -16,7 +16,6 @@ export async function fetchImages(nameImg, page, perPage = 15) {
 
     try {
         const response = await axios.get(`${BASE_URL}?${params}`);
-        console.log("totalHits:", response.data.totalHits);
         return response.data;
     } catch (error) {
         console.error("Error fetching images:", error);
