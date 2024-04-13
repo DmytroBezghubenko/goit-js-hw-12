@@ -3,7 +3,7 @@ const API_KEY = "43225005-d66d61a579372833bf726388e";
 
 import axios from "axios";
 
-export async function fetchImages(nameImg, page = 1, perPage = 15) {
+export async function fetchImages(nameImg, page, perPage = 15) {
     const params = new URLSearchParams({
         key: API_KEY,
         q: nameImg,
@@ -16,6 +16,7 @@ export async function fetchImages(nameImg, page = 1, perPage = 15) {
 
     try {
         const response = await axios.get(`${BASE_URL}?${params}`);
+        console.log("totalHits:", response.data.totalHits);
         return response.data;
     } catch (error) {
         console.error("Error fetching images:", error);
