@@ -12,13 +12,12 @@ const form = document.querySelector(".form");
 const list = document.querySelector('.gallery');
 const loader = document.getElementById('loader');
 const input = document.querySelector('#nameImg');
+const btnLoadMore = document.querySelector(".btn_load_more")
 
 form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
     event.preventDefault();
-
-    console.log(input.value);
     if (input.value === "") {
         iziToast.error({
             position: 'topRight',
@@ -57,3 +56,10 @@ function initializeLightbox() {
     });
     gallery.refresh();
 }
+
+btnLoadMore.addEventListener("click", loadMore);
+
+function loadMore() {
+
+}
+

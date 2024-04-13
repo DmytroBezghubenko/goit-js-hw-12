@@ -21,7 +21,7 @@ body {
   border-top: 5px solid red;
   border-bottom: 5px solid red;
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 50%;
   background: linear-gradient(#FF3D00 30px, transparent 0) no-repeat;
   background-size: 2px 40px;
@@ -141,6 +141,11 @@ button {
 
 button:hover {
   background-color: #6C8CFF;
+}
+
+.btn_load_more {
+  margin: 10px auto;
+  display: block;
 }
 
 .elementPhoto {
